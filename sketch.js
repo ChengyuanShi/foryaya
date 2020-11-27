@@ -6,20 +6,20 @@ let points = 0;
 let w = 600;
 let h = 600;
 let player;
-let coins = [];
-let enemy = [];
+let dog1 = [];
+let bagel1 = [];
 let playerImg;
-let coinImg;
+let dog1Img;
 let bgImg;
-let enemyImg;
+let bagel1Img;
 let winImg;
 let dieImg;
 
 
 function preload(){
   playerImg = loadImage('image/slime.gif');
-  coinImg = loadImage('image/coin.gif');
-  enemyImg = loadImage('image/enemy.gif');
+  dog1Img = loadImage('image/dog1.png');
+  bagel1Img = loadImage('image/bagel1.png');
   bgImg = loadImage('image/BG.gif');
   winImg = loadImage('image/win.gif');
   dieImg = loadImage('image/die.gif');
@@ -33,9 +33,9 @@ textFont('monospace');
   player = new Player();
 
   // coins[0] = new Coin();
-  coins.push(new Coin());
+  dog1.push(new Dog1());
 
-  enemy.push(new Enemy());
+  bagel1.push(new Bagel1());
 }
 
 function draw() {
@@ -111,17 +111,17 @@ function level1(){
   background(bgImg);
 
   if (random(1) <= 0.01){
-    coins.push(new Coin());
+    dog1.push(new Dog1());
 
-    enemy.push(new Enemy());
+    bagel1.push(new Bagel1());
   }
 
   player.display();
   player.move();
 
-  for (let i = 0; i < coins.length; i++){
-    coins[i].display();
-    coins[i].move();
+  for (let i = 0; i < dog1.length; i++){
+    dog1[i].display();
+    dog1[i].move();
 
   }
 
@@ -136,16 +136,15 @@ function level1(){
   //   coin.move();
   // }
 
-  for (let i = coins.length - 1; i >= 0; i--){
+  for (let i = dog1.length - 1; i >= 0; i--){
 
-  if(dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r)/2){
-    player.r+= 2;
+  if(dist(player.x, player.y, dog1[i].x, dog1[i].y) <= (player.r + dog1[i].r)/2){
     points++;
 
     console.log(points);
-    coins.splice(i, 1);
-  } else if (coins[i]. y > h){
-    coins,splice(i, 1);
+    dog1.splice(i, 1);
+  } else if (dog1[i]. y > h){
+    dog1.splice(i, 1);
     console.log('coin is out of town');
 
   }
@@ -154,9 +153,9 @@ function level1(){
 
 
 
-for (let i = 0; i < enemy.length; i++){
-  enemy[i].display();
-  enemy[i].move();
+for (let i = 0; i < bagel1.length; i++){
+  bagel1[i].display();
+  bagel1[i].move();
 }
 
 
@@ -170,15 +169,14 @@ for (let i = 0; i < enemy.length; i++){
 //   coin.move();
 // }
 
-for (let i = enemy.length - 1; i >= 0; i--){
+for (let i = bagel1.length - 1; i >= 0; i--){
 
-if(dist(player.x, player.y,enemy[i].x, enemy[i].y) <= (player.r + enemy[i].r)/2){
-  player.r-= 20;
+if(dist(player.x, player.y,bagel1[i].x, bagel1[i].y) <= (player.r + bagel1[i].r)/2){
   points-= 5;
   console.log(points);
-  enemy.splice(i, 1);
-} else if (enemy[i]. y > h){
-  enemy,splice(i, 1);
+  bagel1.splice(i, 1);
+} else if (bagel1[i]. y > h){
+  bagel1.splice(i, 1);
   console.log('enemy is out of town');
 }
 

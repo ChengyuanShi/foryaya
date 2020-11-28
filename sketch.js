@@ -335,9 +335,25 @@ if(points<=0){
 }
 if(points<=-1){
   state = 'you lost';
+dog1 = [];
+dog2 = [];
+dog3 = [];
+dog4 = [];
+bagel1 = [];
+bagel2 = [];
+bagel3 = [];
+bagel8 = [];
 }
 if(points>=12){
   state = 'you win';
+  dog1 = [];
+  dog2 = [];
+  dog3 = [];
+  dog4 = [];
+  bagel1 = [];
+  bagel2 = [];
+  bagel3 = [];
+  bagel8 = [];
 }
 
 fill(250);

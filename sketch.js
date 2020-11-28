@@ -7,11 +7,24 @@ let w = 600;
 let h = 600;
 let player;
 let dog1 = [];
+let dog2 = [];
+let dog3 = [];
+let dog4 = [];
 let bagel1 = [];
+let bagel2 = [];
+let bagel3 = [];
+let bagel8 = [];
 let playerImg;
 let dog1Img;
+let dog2Img;
+let dog3Img;
+let dog4Img;
 let bgImg;
+let bg2Img;
 let bagel1Img;
+let bagel2Img;
+let bagel3Img;
+let bagel8Img;
 let winImg;
 let dieImg;
 
@@ -19,10 +32,19 @@ let dieImg;
 function preload(){
   playerImg = loadImage('image/slime.gif');
   dog1Img = loadImage('image/dog1.png');
+  dog2Img = loadImage('image/dog2.png');
+  dog3Img = loadImage('image/dog3.png');
+  dog4Img = loadImage('image/dog4.png');
+
   bagel1Img = loadImage('image/bagel1.png');
+  bagel2Img = loadImage('image/bagel2.png');
+  bagel3Img = loadImage('image/bagel3.png');
+  bagel8Img = loadImage('image/bagel8.png');
+
   bgImg = loadImage('image/BG.gif');
-  winImg = loadImage('image/win.gif');
-  dieImg = loadImage('image/die.gif');
+  bg2Img = loadImage('image/dab.jpg');
+  winImg = loadImage('image/dog.jpg');
+  dieImg = loadImage('image/bagel.jpg');
 }
 
 function setup(){
@@ -33,9 +55,18 @@ textFont('monospace');
   player = new Player();
 
   // coins[0] = new Coin();
-  dog1.push(new Dog1());
+  // dog1.push(new Dog1());
+  // dog2.push(new Dog2());
+  // dog3.push(new Dog3());
+  // dog4.push(new Dog4());
+  //
+  // bagel1.push(new Bagel1());
+  // bagel2.push(new Bagel2());
+  // bagel3.push(new Bagel3());
+  // bagel8.push(new Bagel8());
 
-  bagel1.push(new Bagel1());
+
+
 }
 
 function draw() {
@@ -91,14 +122,16 @@ function keyReleased(){
 
 
 function title() {
-  background(bgImg);
+  background(bg2Img);
   textSize(80);
-  fill(255);
+  fill(250);
   textAlign(CENTER);
-  text('RAIN SLIME', w/2, h/5);
+  text('DOG & BAGEL', w/2, h/5);
 
   textSize(30);
-  text('click anywhere to start', w/2, h/2.8);
+  text('Control:', w/8, h/2.4);
+  text('Left Arrow(Left), Right Arrow(Right)', w/2, h/2.1);
+  text('click anywhere to start', w/2, h/1.8);
 }
 
 function titleMouseClicked(){
@@ -108,13 +141,33 @@ function titleMouseClicked(){
 
 
 function level1(){
-  background(bgImg);
+  background(20);
 
-  if (random(1) <= 0.01){
-    dog1.push(new Dog1());
-
+  if (random(1.8) <= 0.01){
+dog1.push(new Dog1());
+}
+if (random(1.8) <= 0.01){
+dog2.push(new Dog2());
+}
+if (random(1.8) <= 0.01){
+dog3.push(new Dog3());
+}
+if (random(1.8) <= 0.01){
+dog4.push(new Dog4());
+}
+if (random(1.8) <= 0.01){
     bagel1.push(new Bagel1());
-  }
+    }
+    if (random(1.8) <= 0.01){
+        bagel2.push(new Bagel2());
+        }
+        if (random(1.8) <= 0.01){
+            bagel3.push(new Bagel3());
+            }
+            if (random(1.8) <= 0.01){
+                bagel8.push(new Bagel8());
+                }
+
 
   player.display();
   player.move();
@@ -125,17 +178,6 @@ function level1(){
 
   }
 
-
-  // coins.forEach(function(coin){
-  //   coin.display();
-  //   coin.move();
-  // })
-
-  // for (let coin of coins){
-  //   coin.display();
-  //   coin.move();
-  // }
-
   for (let i = dog1.length - 1; i >= 0; i--){
 
   if(dist(player.x, player.y, dog1[i].x, dog1[i].y) <= (player.r + dog1[i].r)/2){
@@ -144,13 +186,72 @@ function level1(){
     console.log(points);
     dog1.splice(i, 1);
   } else if (dog1[i]. y > h){
+
     dog1.splice(i, 1);
     console.log('coin is out of town');
 
   }
 }
 
+for (let i = 0; i < dog2.length; i++){
+  dog2[i].display();
+  dog2[i].move();
 
+}
+
+for (let i = dog2.length - 1; i >= 0; i--){
+
+if(dist(player.x, player.y, dog2[i].x, dog2[i].y) <= (player.r + dog2[i].r)/2){
+  points++;
+
+  console.log(points);
+  dog2.splice(i, 1);
+} else if (dog2[i]. y > h){
+  dog2.splice(i, 1);
+  console.log('coin is out of town');
+
+}
+}
+
+for (let i = 0; i < dog3.length; i++){
+  dog3[i].display();
+  dog3[i].move();
+
+}
+
+for (let i = dog3.length - 1; i >= 0; i--){
+
+if(dist(player.x, player.y, dog3[i].x, dog3[i].y) <= (player.r + dog3[i].r)/2){
+  points++;
+
+  console.log(points);
+  dog3.splice(i, 1);
+} else if (dog3[i]. y > h){
+  dog3.splice(i, 1);
+  console.log('coin is out of town');
+
+}
+}
+
+for (let i = 0; i < dog4.length; i++){
+  dog4[i].display();
+  dog4[i].move();
+
+}
+
+for (let i = dog4.length - 1; i >= 0; i--){
+
+if(dist(player.x, player.y, dog4[i].x, dog4[i].y) <= (player.r + dog4[i].r)/2){
+  points++;
+
+  console.log(points);
+  dog4.splice(i, 1);
+} else if (dog4[i]. y > h){
+  dog4.splice(i, 1);
+  console.log('coin is out of town');
+
+}
+}
 
 
 for (let i = 0; i < bagel1.length; i++){
@@ -159,26 +260,75 @@ for (let i = 0; i < bagel1.length; i++){
 }
 
 
-// coins.forEach(function(coin){
-//   coin.display();
-//   coin.move();
-// })
-
-// for (let coin of coins){
-//   coin.display();
-//   coin.move();
-// }
-
 for (let i = bagel1.length - 1; i >= 0; i--){
 
 if(dist(player.x, player.y,bagel1[i].x, bagel1[i].y) <= (player.r + bagel1[i].r)/2){
-  points-= 5;
+  points-=10;
   console.log(points);
   bagel1.splice(i, 1);
 } else if (bagel1[i]. y > h){
   bagel1.splice(i, 1);
   console.log('enemy is out of town');
 }
+}
+
+for (let i = 0; i < bagel2.length; i++){
+  bagel2[i].display();
+  bagel2[i].move();
+}
+
+
+for (let i = bagel2.length - 1; i >= 0; i--){
+
+if(dist(player.x, player.y,bagel2[i].x, bagel2[i].y) <= (player.r + bagel2[i].r)/2){
+    points-=10;
+  console.log(points);
+  bagel2.splice(i, 1);
+} else if (bagel2[i]. y > h){
+  bagel2.splice(i, 1);
+  console.log(' bagel2 is out of town');
+}
+}
+
+for (let i = 0; i < bagel3.length; i++){
+  bagel3[i].display();
+  bagel3[i].move();
+}
+
+
+for (let i = bagel3.length - 1; i >= 0; i--){
+
+if(dist(player.x, player.y,bagel3[i].x, bagel3[i].y) <= (player.r + bagel3[i].r)/2){
+  points-=10;
+  console.log(points);
+  bagel3.splice(i, 1);
+} else if (bagel3[i]. y > h){
+  bagel3.splice(i, 1);
+  console.log(' bagel3 is out of town');
+}
+}
+
+for (let i = 0; i < bagel8.length; i++){
+  bagel8[i].display();
+  bagel8[i].move();
+}
+
+
+for (let i = bagel8.length - 1; i >= 0; i--){
+
+if(dist(player.x, player.y,bagel8[i].x, bagel8[i].y) <= (player.r + bagel8[i].r)/2){
+  points-=10;
+  console.log(points);
+  bagel8.splice(i, 1);
+} else if (bagel8[i]. y > h){
+  bagel8.splice(i, 1);
+  console.log('enemy is out of town');
+}
+}
+
+
+
+
 
 if(points<=0){
   player.r=70;
@@ -186,13 +336,15 @@ if(points<=0){
 if(points<=-1){
   state = 'you lost';
 }
-if(points>=21){
+if(points>=12){
   state = 'you win';
 }
 
-
-
-}text('points: ' + points, w/7, h - 560);
+fill(250);
+text('points: ' + points, w/7, h - 560);
+text('dog +1', w/1.2, h - 560);
+text('bagel -10', w/1.2, h - 530);
+text('12 points to win', w/1.3, h - 500);
 }
 
 
@@ -211,12 +363,12 @@ function level1MouseClicked(){
 function youWin(){
   background(winImg);
   textSize(80);
-  fill(255);
+  fill(0);
   textAlign(CENTER);
   text('YOU WIN', w/2, h/5);
 
   textSize(30);
-  text('click anywhere to restart', w/2, h/2.8);
+  text('click anywhere to restart', w/2, h/1.02);
 
 }
 
@@ -228,7 +380,7 @@ function youWinMouseClicked(){
 function youLost(){
   background(dieImg);
   textSize(80);
-  fill(255);
+  fill(0);
   textAlign(CENTER);
   text('YOU LOST', w/2, h/5);
 

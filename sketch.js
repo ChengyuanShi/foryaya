@@ -125,10 +125,10 @@ function keyReleased(){
 
 
 function title() {
-  background(starImg);
+  background(0);
 
-  textSize(80);
-  fill(185, 128, 255);
+  textSize(50);
+  fill(185, 128, 0);
   textAlign(CENTER);
   text('DOG & BAGEL', w/2, h/5);
 
@@ -145,7 +145,7 @@ function titleMouseClicked(){
 
 
 function level1(){
-  background(starImg);
+  background(0);
 
   if (random(1.8) <= 0.01){
 dog1.push(new Dog1());
@@ -360,11 +360,11 @@ if(points>=12){
   bagel8 = [];
 }
 
-fill(185, 128, 255);
-text('points: ' + points, w/7, h - 560);
-text('dog +1', w/1.2, h - 560);
-text('bagel -10', w/1.2, h - 530);
-text('12 points to win', w/1.3, h - 500);
+fill(185, 128, 0);
+text('points: ' + points, w/7, h - 750);
+// text('dog +1', w/1.2, h - 560);
+// text('bagel -10', w/1.2, h - 530);
+// text('12 points to win', w/1.3, h - 500);
 }
 
 
@@ -382,10 +382,10 @@ function level1MouseClicked(){
 
 function youWin(){
   background(winImg);
-  textSize(80);
-  fill(185, 128, 255);
+  textSize(50);
+  fill(185, 128, 0);
   textAlign(CENTER);
-  text('YOU WIN', w/2, h/5);
+  text('YOU WIN', w/2, h/1.94);
 
   textSize(30);
   text('click anywhere to restart', w/2, h/1.02);
@@ -398,11 +398,11 @@ function youWinMouseClicked(){
 }
 
 function youLost(){
-  background(starImg);
-  textSize(80);
-  fill(185, 128, 255);
+  background(dieImg);
+  textSize(50);
+  fill(185, 128, 0);
   textAlign(CENTER);
-  text('YOU LOST', w/2, h/5);
+  text('YOU LOST', w/2, h/1.94);
 
   textSize(30);
   text('click anywhere to restart', w/2, h/1.02);

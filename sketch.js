@@ -3,8 +3,8 @@
 let state = 'title';
 let cnv;
 let points = 0;
-let w = 600;
-let h = 600;
+let w =800;
+let h =800;
 let player;
 let dog1 = [];
 let dog2 = [];
@@ -27,7 +27,8 @@ let bagel3Img;
 let bagel8Img;
 let winImg;
 let dieImg;
-
+let starImg;
+let star2Img;
 
 function preload(){
   playerImg = loadImage('image/slime.gif');
@@ -45,6 +46,8 @@ function preload(){
   bg2Img = loadImage('image/dab.jpg');
   winImg = loadImage('image/dog.jpg');
   dieImg = loadImage('image/bagel.jpg');
+  starImg = loadImage('image/1.gif');
+  star2Img = loadImage('image/2.gif');
 }
 
 function setup(){
@@ -122,9 +125,10 @@ function keyReleased(){
 
 
 function title() {
-  background(bg2Img);
+  background(starImg);
+
   textSize(80);
-  fill(250);
+  fill(185, 128, 255);
   textAlign(CENTER);
   text('DOG & BAGEL', w/2, h/5);
 
@@ -141,7 +145,7 @@ function titleMouseClicked(){
 
 
 function level1(){
-  background(20);
+  background(starImg);
 
   if (random(1.8) <= 0.01){
 dog1.push(new Dog1());
@@ -356,7 +360,7 @@ if(points>=12){
   bagel8 = [];
 }
 
-fill(250);
+fill(185, 128, 255);
 text('points: ' + points, w/7, h - 560);
 text('dog +1', w/1.2, h - 560);
 text('bagel -10', w/1.2, h - 530);
@@ -379,7 +383,7 @@ function level1MouseClicked(){
 function youWin(){
   background(winImg);
   textSize(80);
-  fill(0);
+  fill(185, 128, 255);
   textAlign(CENTER);
   text('YOU WIN', w/2, h/5);
 
@@ -389,14 +393,14 @@ function youWin(){
 }
 
 function youWinMouseClicked(){
-  state = 'level 1';
+  state = 'title';
   points = 0;
 }
 
 function youLost(){
-  background(dieImg);
+  background(starImg);
   textSize(80);
-  fill(0);
+  fill(185, 128, 255);
   textAlign(CENTER);
   text('YOU LOST', w/2, h/5);
 
@@ -405,6 +409,6 @@ function youLost(){
 
 }
 function youLostMouseClicked(){
-  state = 'level 1';
+  state = 'title';
   points = 0;
 }

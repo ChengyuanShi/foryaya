@@ -4,7 +4,7 @@ class Dog4 {
     this.r = 50;
     this.x = random(w);
     this.y = 0 - this.r;
-    this.speed = 5;
+    this.speed = 6;
 
 
   }

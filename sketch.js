@@ -132,10 +132,12 @@ function title() {
   textAlign(CENTER);
   text('DOG & BAGEL', w/2, h/5);
 
-  textSize(30);
-  text('Control:', w/8, h/2.4);
-  text('Left Arrow(Left), Right Arrow(Right)', w/2, h/2.1);
-  text('click anywhere to start', w/2, h/1.8);
+  textSize(25);
+  text('This game is based on the similarity bias which we\n mentioned before. Similarity bias is a type of Algorithmic\n bias. Through this game "Dog and Bagel", players are\n allowed to quickly identify the photos of dogs and bagels.\n The purpose is to test whether you have similarity bias or\n not. You will get 1 point for catch a dog, lost 10 points\n for catch a bagel, and 12 points to win the game. Useing\n the left and right keys to move.', w/2, h/3.8);
+  // text('Control:', w/8, h/2.4);
+  // text('Left Arrow(Left), Right Arrow(Right)', w/2, h/2.1);
+textSize(30);
+  text('[Click Anywhere To Start]', w/2, h/1.5);
 }
 
 function titleMouseClicked(){

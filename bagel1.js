@@ -4,7 +4,7 @@ class Bagel1 {
     this.r = 40;
     this.x = random(w);
     this.y = 0 - this.r;
-    this.speed = 5;
+    this.speed = 6;
   }
 
   display(){

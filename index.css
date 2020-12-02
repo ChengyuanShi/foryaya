@@ -1,7 +1,5 @@
-/* @import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap'); */
-body{
-
-/* font-family: 'Shadows Into Light', cursive; */
-  background-image:url("../image/1.gif");
-  /* text-align: center; */
+<style>
+body {
+  background-image: url('image/1.gif');
 }
+</style>

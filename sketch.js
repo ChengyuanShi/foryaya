@@ -3,7 +3,7 @@
 let state = 'title';
 let cnv;
 let points = 0;
-let w =800;
+let w =1000;
 let h =800;
 let player;
 let dog1 = [];
@@ -32,20 +32,20 @@ let star2Img;
 
 function preload(){
   playerImg = loadImage('image/slime.gif');
-  dog1Img = loadImage('image/dog1.png');
-  dog2Img = loadImage('image/dog2.png');
-  dog3Img = loadImage('image/dog3.png');
-  dog4Img = loadImage('image/dog4.png');
+  dog1Img = loadImage('image/bagel1.gif');
+  dog2Img = loadImage('image/bagel1.gif');
+  dog3Img = loadImage('image/bagel1.gif');
+  dog4Img = loadImage('image/bagel1.gif');
 
-  bagel1Img = loadImage('image/bagel1.png');
-  bagel2Img = loadImage('image/bagel2.png');
-  bagel3Img = loadImage('image/bagel3.png');
-  bagel8Img = loadImage('image/bagel8.png');
+  bagel1Img = loadImage('image/gst.gif');
+  bagel2Img = loadImage('image/gst.gif');
+  bagel3Img = loadImage('image/gst.gif');
+  bagel8Img = loadImage('image/gst.gif');
 
   bgImg = loadImage('image/BG.gif');
-  bg2Img = loadImage('image/dab.jpg');
-  winImg = loadImage('image/dog.jpg');
-  dieImg = loadImage('image/bagel.jpg');
+  bg2Img = loadImage('image/BG2.gif');
+  winImg = loadImage('image/dog.gif');
+  dieImg = loadImage('image/bagel.png');
   starImg = loadImage('image/1.gif');
   star2Img = loadImage('image/2.gif');
 }
@@ -125,15 +125,16 @@ function keyReleased(){
 
 
 function title() {
-  background(0);
+  background(bgImg);
 
-  textSize(50);
-  fill(185, 128, 0);
+  textSize(80);
+
+  fill(225, 225, 225);
   textAlign(CENTER);
-  text('DOG & BAGEL', w/2, h/5);
+  text('小莹莹，情人节快乐!', w/2, h/5);
+
 
   textSize(25);
-  text('This game is based on the similarity bias which we\n mentioned before. Similarity bias is a type of Algorithmic\n bias. Through this game "Dog and Bagel", players are\n allowed to quickly identify the photos of dogs and bagels.\n The purpose is to test whether you have similarity bias or\n not. You will get 1 point for catch a dog, lost 10 points\n for catch a bagel, and 12 points to win the game. Useing\n the left and right keys to move.', w/2, h/3.8);
   // text('Control:', w/8, h/2.4);
   // text('Left Arrow(Left), Right Arrow(Right)', w/2, h/2.1);
 textSize(30);
@@ -147,7 +148,7 @@ function titleMouseClicked(){
 
 
 function level1(){
-  background(0);
+  background(bg2Img);
 
   if (random(1.8) <= 0.01){
 dog1.push(new Dog1());
@@ -362,7 +363,7 @@ if(points>=12){
   bagel8 = [];
 }
 
-fill(185, 128, 0);
+fill(0, 0, 0);
 text('points: ' + points, w/7, h - 750);
 // text('dog +1', w/1.2, h - 560);
 // text('bagel -10', w/1.2, h - 530);
@@ -385,12 +386,12 @@ function level1MouseClicked(){
 function youWin(){
   background(winImg);
   textSize(50);
-  fill(185, 128, 0);
-  textAlign(CENTER);
-  text('YOU WIN', w/2, h/1.94);
+  // fill(185, 128, 0);
+  // textAlign(CENTER);
+  // text('YOU WIN', w/2, h/1.94);
 
-  textSize(30);
-  text('click anywhere to restart', w/2, h/1.02);
+  // textSize(30);
+  // text('click anywhere to restart', w/2, h/1.02);
 
 }
 
@@ -402,12 +403,12 @@ function youWinMouseClicked(){
 function youLost(){
   background(dieImg);
   textSize(50);
-  fill(185, 128, 0);
-  textAlign(CENTER);
-  text('YOU LOST', w/2, h/1.94);
+  // fill(185, 128, 0);
+  // textAlign(CENTER);
+  // text('YOU LOST', w/2, h/1.94);
 
-  textSize(30);
-  text('click anywhere to restart', w/2, h/1.02);
+  // textSize(30);
+  // text('click anywhere to restart', w/2, h/1.02);
 
 }
 function youLostMouseClicked(){
